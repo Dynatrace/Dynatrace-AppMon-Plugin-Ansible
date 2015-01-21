@@ -1,0 +1,6 @@
+---
+- name: Remove package 'curl'
+  apt: name=curl state=absent
+  when: curl_installed|success
+  ignore_errors: yes
+  sudo: yes

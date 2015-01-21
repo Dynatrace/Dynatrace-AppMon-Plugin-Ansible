@@ -1,0 +1,12 @@
+---
+- name: Check if 'curl' is on the PATH
+  shell: which curl
+  sudo: yes
+  ignore_errors: yes
+  register: which_curl_cmd
+
+- name: Install package 'curl'
+  yum: pkg=curl state=present
+  register: curl_installed
+  when: which_curl_cmd.rc != 0
+  sudo: yes
