@@ -8,7 +8,7 @@ An [Ansible](http://www.ansible.com) role for automated deployments of a [Dynatr
 
 The role is available via:
 
-- [Ansible Galaxy](https://galaxy.ansible.com/list#/roles/)
+- [Ansible Galaxy](https://galaxy.ansible.com/list#/roles/2628)
 - [GitHub](https://github.com/Dynatrace/Dynatrace-Plugin-Ansible)
 
 ## Requirements
