@@ -13,7 +13,7 @@ The role is available via:
 
 ## Requirements
 
-Place a plugin ```dynatrace-plugin.zip``` in the role's ```files``` directory from where it will be picked up during the automated installation.
+Place a plugin ```dynatrace-plugin.dtf``` in the role's ```files``` directory from where it will be picked up during the automated installation.
 
 ## Role Variables
 
