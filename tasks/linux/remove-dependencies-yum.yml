@@ -1,6 +1,6 @@
 ---
 - name: Remove package 'curl'
   yum: name=curl state=absent
-  when: curl_installed|success
+  when: not curl_install|skipped
   ignore_errors: yes
   sudo: yes
