@@ -7,6 +7,6 @@
 
 - name: Install package 'curl'
   yum: pkg=curl state=present
-  register: curl_installed
+  register: curl_install
   when: which_curl_cmd.rc != 0
   sudo: yes
