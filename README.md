@@ -38,6 +38,7 @@ As defined in ```defaults/main.yml```:
 - [Dynatrace Documentation: Server REST Interfaces - Plugin Management](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356644)
 - [Slide Deck: Automated Deployments](http://slideshare.net/MartinEtmajer/automated-deployments-slide-share)
 - [Slide Deck: Introduction to Automated Deployments with Ansible](http://www.slideshare.net/MartinEtmajer/introduction-to-automated-deployments-with-ansible)
+- [Tutorials: Automated Deployments with Dynatrace and Ansible](https://community.compuwareapm.com/community/display/COE/Tutorials+on+Automated+Deployments#TutorialsonAutomatedDeployments-ansible)
 
 ## Questions?
 
