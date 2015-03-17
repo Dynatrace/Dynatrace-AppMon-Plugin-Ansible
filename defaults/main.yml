@@ -5,4 +5,4 @@ dynatrace_plugin_file_name: dynatrace-plugin.dtp
 dynatrace_plugin_user_name: admin
 dynatrace_plugin_user_password: admin
 
-dynatrace_plugin_role_name: Dynatrace-Plugin
+dynatrace_plugin_role_name: dynatrace.Dynatrace-Plugin
