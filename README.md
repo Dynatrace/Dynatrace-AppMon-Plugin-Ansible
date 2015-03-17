@@ -19,19 +19,19 @@ Place a plugin ```dynatrace-plugin.dtf``` in the role's ```files``` directory fr
 
 As defined in ```defaults/main.yml```:
 
-| Name                                           | Default               | Description                                                                       |
-|------------------------------------------------|-----------------------|-----------------------------------------------------------------------------------|
-| *dynatrace_plugin_linux_dynatrace_install_dir* | /opt/dynatrace        | The directory that contains an installation of the Dynatrace Server. |
-| *dynatrace_plugin_file_name*                   | dynatrace-plugin.dtf  | The file name of the Dynatrace Plugin in the role's ```files``` directory. |
-| *dynatrace_plugin_user_name*                   | admin                 | The username of a Dynatrace user that has the *Manage Plugin Bundles* permission. |
-| *dynatrace_plugin_user_password*               | admin                 | The password of a Dynatrace user that has the *Manage Plugin Bundles* permission. |
-| *dynatrace_plugin_role_name*                   | Dynatrace-Plugin      | The actual name of this role in an [Ansible Playbook's](http://docs.ansible.com/playbooks.html) ```roles``` directory. |
+| Name                                           | Default                    | Description                                                                       |
+|------------------------------------------------|----------------------------|-----------------------------------------------------------------------------------|
+| *dynatrace_plugin_linux_dynatrace_install_dir* | /opt/dynatrace             | The directory that contains an installation of the Dynatrace Server. |
+| *dynatrace_plugin_file_name*                   | dynatrace-plugin.dtf       | The file name of the Dynatrace Plugin in the role's ```files``` directory. |
+| *dynatrace_plugin_user_name*                   | admin                      | The username of a Dynatrace user that has the *Manage Plugin Bundles* permission. |
+| *dynatrace_plugin_user_password*               | admin                      | The password of a Dynatrace user that has the *Manage Plugin Bundles* permission. |
+| *dynatrace_plugin_role_name*                   | dynatrace.Dynatrace-Plugin | The actual name of this role in an [Ansible Playbook's](http://docs.ansible.com/playbooks.html) ```roles``` directory. |
 
 ## Example Playbook
 
 	- hosts: all
 	  roles:
-	    - { role: Dynatrace-Plugin }
+	    - role: Dynatrace-Plugin
 
 ## Additional Resources
 
