@@ -31,7 +31,7 @@ As defined in ```defaults/main.yml```:
 
 	- hosts: all
 	  roles:
-	    - role: Dynatrace-Plugin
+	    - role: dynatrace.Dynatrace-Plugin
 
 ## Additional Resources
 
