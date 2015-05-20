@@ -2,8 +2,6 @@
 
 An [Ansible](http://www.ansible.com) role for automated deployments of a [Dynatrace](http://bit.ly/dttrial) Plugin. 
 
-**Note**: Currently, we support only Linux hosts, support for installing Windows hosts is in the making.
-
 ## Download
 
 The role is available via:
@@ -13,19 +11,19 @@ The role is available via:
 
 ## Requirements
 
-Place a plugin ```dynatrace-plugin.dtf``` in the role's ```files``` directory from where it will be picked up during the automated installation.
+Download a Dynatrace Plugin from [community.dynatrace.com](https://community.dynatrace.com/community/display/DL/FastPacks+and+Plugins) and place the artifact in the role's ```files``` directory from where it will be picked up during the automated installation. Alternatively, you can make the Dynatrace Plugin available at an HTTP, HTTPS or FTP resource and point the installation script to the right location, see below.
 
 ## Role Variables
 
 As defined in ```defaults/main.yml```:
 
-| Name                                           | Default                    | Description                                                                       |
-|------------------------------------------------|----------------------------|-----------------------------------------------------------------------------------|
-| *dynatrace_plugin_linux_dynatrace_install_dir* | /opt/dynatrace             | The directory that contains an installation of the Dynatrace Server. |
-| *dynatrace_plugin_file_name*                   | dynatrace-plugin.dtf       | The file name of the Dynatrace Plugin in the role's ```files``` directory. |
-| *dynatrace_plugin_user_name*                   | admin                      | The username of a Dynatrace user that has the *Manage Plugin Bundles* permission. |
-| *dynatrace_plugin_user_password*               | admin                      | The password of a Dynatrace user that has the *Manage Plugin Bundles* permission. |
-| *dynatrace_plugin_role_name*                   | dynatrace.Dynatrace-Plugin | The actual name of this role in an [Ansible Playbook's](http://docs.ansible.com/playbooks.html) ```roles``` directory. |
+| Name                                           | Default                                         | Description                                                                       |
+|------------------------------------------------|-------------------------------------------------|-----------------------------------------------------------------------------------|
+| *dynatrace_plugin_file_name*                   | dynatrace-plugin.dtf                            | The file name of the Dynatrace Plugin in the role's ```files``` directory. |
+| *dynatrace_plugin_file_url*                    | http://localhost/dynatrace/dynatrace-plugin.dtf | A HTTP, HTTPS or FTP URL to the Dynatrace Plugin in the form (http\|https\|ftp)://[user[:pass]]@host.domain[:port]/path. |
+| *dynatrace_plugin_user_name*                   | admin                                           | The username of a Dynatrace user that has the *Manage Plugin Bundles* permission. |
+| *dynatrace_plugin_user_password*               | admin                                           | The password of a Dynatrace user that has the *Manage Plugin Bundles* permission. |
+| *dynatrace_plugin_role_name*                   | dynatrace.Dynatrace-Plugin                      | The actual name of this role in an [Ansible Playbook's](http://docs.ansible.com/playbooks.html) ```roles``` directory. |
 
 ## Example Playbook
 
@@ -35,10 +33,12 @@ As defined in ```defaults/main.yml```:
 
 ## Additional Resources
 
-- [Dynatrace Documentation: Server REST Interfaces - Plugin Management](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356644)
+- [Blog: How to Automate Enterprise Application Monitoring with Ansible](http://apmblog.dynatrace.com/2015/03/04/how-to-automate-enterprise-application-monitoring-with-ansible/)
+- [Blog: How to Automate Enterprise Application Monitoring with Ansible - Part II](http://apmblog.dynatrace.com/2015/04/23/how-to-automate-enterprise-application-monitoring-with-ansible-part-ii/)
 - [Slide Deck: Automated Deployments](http://slideshare.net/MartinEtmajer/automated-deployments-slide-share)
-- [Slide Deck: Introduction to Automated Deployments with Ansible](http://www.slideshare.net/MartinEtmajer/introduction-to-automated-deployments-with-ansible)
-- [Tutorials: Automated Deployments with Dynatrace and Ansible](https://community.compuwareapm.com/community/display/COE/Tutorials+on+Automated+Deployments#TutorialsonAutomatedDeployments-ansible)
+- [Slide Deck: Automated Deployments (of Dynatrace) with Ansible](http://www.slideshare.net/MartinEtmajer/automated-deployments-with-ansible)
+- [Slide Deck: Testing Ansible Roles with Test Kitchen, Serverspec and RSpec](http://www.slideshare.net/MartinEtmajer/testing-ansible-roles-with-test-kitchen-serverspec-and-rspec-48185017)
+- [Tutorials: Automated Deployments (of Dynatrace) with Ansible](https://community.compuwareapm.com/community/display/COE/Tutorials+on+Automated+Deployments#TutorialsonAutomatedDeployments-ansible)
 
 ## Questions?
 
