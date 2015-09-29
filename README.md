@@ -1,6 +1,6 @@
 # Dynatrace-Plugin-Ansible
 
-An [Ansible](http://www.ansible.com) role for automated deployments of a [Dynatrace](http://bit.ly/dttrial) Plugin. 
+This Ansible role installs a Dynatrace Plugin of the [Dynatrace Application Monitoring](http://www.dynatrace.com/en/products/application-monitoring.html) solution.
 
 ## Download
 
@@ -11,38 +11,66 @@ The role is available via:
 
 ## Requirements
 
-Download a Dynatrace Plugin from [community.dynatrace.com](https://community.dynatrace.com/community/display/DL/FastPacks+and+Plugins) and place the artifact in the role's ```files``` directory from where it will be picked up during the automated installation. Alternatively, you can make the Dynatrace Plugin available at an HTTP, HTTPS or FTP resource and point the installation script to the right location, see below.
+Download a Dynatrace Update from [community.dynatrace.com](https://community.dynatrace.com/community/display/DL/FastPacks+and+Plugins) and place the artifact in the role's ```files``` directory from where it will be picked up during the installation. Alternatively, you can make the Dynatrace Update available at an HTTP, HTTPS or FTP resource and point the installation script to the right location via the `dynatrace_plugin_file_url` attribute, see below.
 
 ## Role Variables
 
 As defined in ```defaults/main.yml```:
 
-| Name                                           | Default                                         | Description                                                                       |
-|------------------------------------------------|-------------------------------------------------|-----------------------------------------------------------------------------------|
-| *dynatrace_plugin_file_name*                   | dynatrace-plugin.dtf                            | The file name of the Dynatrace Plugin in the role's ```files``` directory. |
-| *dynatrace_plugin_file_url*                    | http://localhost/dynatrace/dynatrace-plugin.dtf | A HTTP, HTTPS or FTP URL to the Dynatrace Plugin in the form (http\|https\|ftp)://[user[:pass]]@host.domain[:port]/path. |
-| *dynatrace_plugin_user_name*                   | admin                                           | The username of a Dynatrace user that has the *Manage Plugin Bundles* permission. |
-| *dynatrace_plugin_user_password*               | admin                                           | The password of a Dynatrace user that has the *Manage Plugin Bundles* permission. |
-| *dynatrace_plugin_role_name*                   | dynatrace.Dynatrace-Plugin                      | The actual name of this role in an [Ansible Playbook's](http://docs.ansible.com/playbooks.html) ```roles``` directory. |
+| Name                             | Default                                         | Description |
+|----------------------------------|-------------------------------------------------|-------------|
+| *dynatrace_plugin_file_name*     | dynatrace-plugin.dtf                            | The file name of the Dynatrace Plugin in the role's ```files``` directory. |
+| *dynatrace_plugin_file_url*      | http://localhost/dynatrace/dynatrace-plugin.dtf | A HTTP, HTTPS or FTP URL to the Dynatrace Plugin in the form (http\|https\|ftp)://[user[:pass]]@host.domain[:port]/path. |
+| *dynatrace_plugin_user_name*     | admin                                           | The username of a Dynatrace user that has the *Manage Plugin Bundles* permission. |
+| *dynatrace_plugin_user_password* | admin                                           | The password of a Dynatrace user that has the *Manage Plugin Bundles* permission. |
+| *dynatrace_plugin_role_name*     | dynatrace.Dynatrace-Plugin                      | The actual name of this role in an [Ansible Playbook's](http://docs.ansible.com/playbooks.html) ```roles``` directory. |
 
 ## Example Playbook
 
-	- hosts: all
-	  roles:
-	    - role: dynatrace.Dynatrace-Plugin
+```
+- hosts: all
+  roles:
+    - role: dynatrace.Dynatrace-Plugin
+```
+
+## Testing
+
+We use [Test Kitchen](http://kitchen.ci) to automatically test our automated deployments with [Serverspec](http://serverspec.org) and [RSpec](http://rspec.info/):
+
+1) Install Test Kitchen and its dependencies from within the project's directory:
+
+```
+gem install bundler
+bundle install
+```
+
+2) Run all tests
+
+```
+kitchen test
+```
+
+By default, we run our tests inside [Docker](https://www.docker.com/) containers as this considerably speeds up testing time (see `.kitchen.yml`).
 
 ## Additional Resources
 
-- [Blog: How to Automate Enterprise Application Monitoring with Ansible](http://apmblog.dynatrace.com/2015/03/04/how-to-automate-enterprise-application-monitoring-with-ansible/)
-- [Blog: How to Automate Enterprise Application Monitoring with Ansible - Part II](http://apmblog.dynatrace.com/2015/04/23/how-to-automate-enterprise-application-monitoring-with-ansible-part-ii/)
-- [Slide Deck: Automated Deployments](http://slideshare.net/MartinEtmajer/automated-deployments-slide-share)
-- [Slide Deck: Automated Deployments (of Dynatrace) with Ansible](http://www.slideshare.net/MartinEtmajer/automated-deployments-with-ansible)
-- [Slide Deck: Testing Ansible Roles with Test Kitchen, Serverspec and RSpec](http://www.slideshare.net/MartinEtmajer/testing-ansible-roles-with-test-kitchen-serverspec-and-rspec-48185017)
-- [Tutorials: Automated Deployments (of Dynatrace) with Ansible](https://community.compuwareapm.com/community/display/LEARN/Tutorials+on+Automated+Deployments#TutorialsonAutomatedDeployments-ansible)
+### Blogs
+
+- [How to Automate Enterprise Application Monitoring with Ansible](http://apmblog.dynatrace.com/2015/03/04/how-to-automate-enterprise-application-monitoring-with-ansible/)
+- [How to Automate Enterprise Application Monitoring with Ansible - Part II](http://apmblog.dynatrace.com/2015/04/23/how-to-automate-enterprise-application-monitoring-with-ansible-part-ii/)
+
+### Presentations
+
+- [Automated Deployments (of Dynatrace) with Ansible](http://www.slideshare.net/MartinEtmajer/automated-deployments-with-ansible)
+- [Test-Driven Infrastructure with Ansible, Test Kitchen, Serverspec and RSpec](http://www.slideshare.net/MartinEtmajer/testing-ansible-roles-with-test-kitchen-serverspec-and-rspec-48185017)
+
+### Tutorials
+
+- [Automated Deployments (of Dynatrace) with Ansible](https://community.compuwareapm.com/community/display/LEARN/Tutorials+on+Automated+Deployments#TutorialsonAutomatedDeployments-ansible)
 
 ## Questions?
 
-Feel free to post your questions on the Dynatrace Community's [Continuous Delivery Forum](https://community.dynatrace.com/community/pages/viewpage.action?pageId=46628921).
+Feel free to post your questions on the Dynatrace Community's [Continuous Delivery Forum](https://answers.dynatrace.com/spaces/148/open-q-a_2.html?topics=continuous%20delivery).
 
 ## License
 
