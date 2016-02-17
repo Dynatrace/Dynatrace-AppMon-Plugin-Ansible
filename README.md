@@ -23,14 +23,14 @@ As defined in ```defaults/main.yml```:
 | *dynatrace_plugin_file_url*      | http://localhost/dynatrace/dynatrace-plugin.dtf | A HTTP, HTTPS or FTP URL to the Dynatrace Plugin in the form (http\|https\|ftp)://[user[:pass]]@host.domain[:port]/path. |
 | *dynatrace_plugin_user_name*     | admin                                           | The username of a Dynatrace user that has the *Manage Plugin Bundles* permission. |
 | *dynatrace_plugin_user_password* | admin                                           | The password of a Dynatrace user that has the *Manage Plugin Bundles* permission. |
-| *dynatrace_plugin_role_name*     | dynatrace.Dynatrace-Plugin                      | The actual name of this role in an [Ansible Playbook's](http://docs.ansible.com/playbooks.html) ```roles``` directory. |
+| *dynatrace_plugin_role_name*     | Dynatrace.Dynatrace-Plugin                      | The actual name of this role in an [Ansible Playbook's](http://docs.ansible.com/playbooks.html) ```roles``` directory. |
 
 ## Example Playbook
 
 ```
 - hosts: all
   roles:
-    - role: dynatrace.Dynatrace-Plugin
+    - role: Dynatrace.Dynatrace-Plugin
 ```
 
 ## Testing
