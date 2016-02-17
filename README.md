@@ -6,7 +6,7 @@ This Ansible role installs a Dynatrace Plugin of the [Dynatrace Application Moni
 
 The role is available via:
 
-- [Ansible Galaxy](https://galaxy.ansible.com/list#/roles/5330)
+- [Ansible Galaxy](https://galaxy.ansible.com/Dynatrace/Dynatrace-Plugin)
 - [GitHub](https://github.com/Dynatrace/Dynatrace-Plugin-Ansible)
 
 ## Requirements
