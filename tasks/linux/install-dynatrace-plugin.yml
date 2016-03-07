@@ -9,7 +9,7 @@
     port: 8020
     delay: 5
     state: present
-  sudo: yes
+  become: yes
 
 - name: Install the Dynatrace plugin
   shell: curl --fail --silent --write-out %{http_code} --user {{ dynatrace_plugin_user_name }}:{{ dynatrace_plugin_user_password }} --form "file=@/tmp/{{ dynatrace_plugin_file_name }}" http://localhost:8020/rest/management/installjobs
