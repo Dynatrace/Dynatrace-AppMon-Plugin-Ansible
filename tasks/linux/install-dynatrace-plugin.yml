@@ -1,9 +1,14 @@
 ---
 - name: Copy the Dynatrace plugin file to /tmp
-  copy: src="{{ playbook_dir }}/roles/{{ dynatrace_plugin_role_name }}/files/{{ dynatrace_plugin_file_name }}" dest="/tmp/{{ dynatrace_plugin_file_name }}"
+  copy:
+    src: "{{ playbook_dir }}/roles/{{ dynatrace_plugin_role_name }}/files/{{ dynatrace_plugin_file_name }}"
+    dest: "/tmp/{{ dynatrace_plugin_file_name }}"
 
 - name: Wait for the Dynatrace Server to become available via port 8020
-  wait_for: port=8020 delay=5 state=present
+  wait_for:
+    port: 8020
+    delay: 5
+    state: present
   sudo: yes
 
 - name: Install the Dynatrace plugin
@@ -12,4 +17,6 @@
   failed_when: dynatrace_plugin_install.stdout != '201'
 
 - name: Remove the Dynatrace plugin
-  file: path="/tmp/{{ dynatrace_plugin_file_name }}" state=absent
+  file:
+    path: "/tmp/{{ dynatrace_plugin_file_name }}"
+    state: absent
