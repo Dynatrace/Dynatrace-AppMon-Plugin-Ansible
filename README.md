@@ -1,6 +1,6 @@
 # Dynatrace-Plugin-Ansible
 
-This Ansible role installs a Dynatrace Plugin of the [Dynatrace Application Monitoring](http://www.dynatrace.com/en/products/application-monitoring.html) solution.
+This Ansible role installs a Dynatrace AppMon Plugin of the [Dynatrace AppMon](https://www.dynatrace.com/support/doc/appmon/) solution.
 
 ## Download
 
@@ -11,7 +11,7 @@ The role is available via:
 
 ## Requirements
 
-Download a Dynatrace Update from [community.dynatrace.com](https://community.dynatrace.com/community/display/DL/FastPacks+and+Plugins) and place the artifact in the role's ```files``` directory from where it will be picked up during the installation. Alternatively, you can make the Dynatrace Update available at an HTTP, HTTPS or FTP resource and point the installation script to the right location via the `dynatrace_plugin_file_url` attribute, see below.
+Download a Dynatrace AppMon Update from [community.dynatrace.com](https://community.dynatrace.com/community/display/DL/FastPacks+and+Plugins) and place the artifact in the role's ```files``` directory from where it will be picked up during the installation. Alternatively, you can make the Dynatrace AppMon Update available at an HTTP, HTTPS or FTP resource and point the installation script to the right location via the `dynatrace_plugin_file_url` attribute, see below.
 
 ## Role Variables
 
@@ -19,10 +19,10 @@ As defined in ```defaults/main.yml```:
 
 | Name                             | Default                                         | Description |
 |----------------------------------|-------------------------------------------------|-------------|
-| *dynatrace_plugin_file_name*     | dynatrace-plugin.dtf                            | The file name of the Dynatrace Plugin in the role's ```files``` directory. |
-| *dynatrace_plugin_file_url*      | http://localhost/dynatrace/dynatrace-plugin.dtf | A HTTP, HTTPS or FTP URL to the Dynatrace Plugin in the form (http\|https\|ftp)://[user[:pass]]@host.domain[:port]/path. |
-| *dynatrace_plugin_user_name*     | admin                                           | The username of a Dynatrace user that has the *Manage Plugin Bundles* permission. |
-| *dynatrace_plugin_user_password* | admin                                           | The password of a Dynatrace user that has the *Manage Plugin Bundles* permission. |
+| *dynatrace_plugin_file_name*     | dynatrace-plugin.dtf                            | The file name of the Dynatrace AppMon Plugin in the role's ```files``` directory. |
+| *dynatrace_plugin_file_url*      | http://localhost/dynatrace/dynatrace-plugin.dtf | A HTTP, HTTPS or FTP URL to the Dynatrace AppMon Plugin in the form (http\|https\|ftp)://[user[:pass]]@host.domain[:port]/path. |
+| *dynatrace_plugin_user_name*     | admin                                           | The username of a Dynatrace AppMon user that has the *Manage Plugin Bundles* permission. |
+| *dynatrace_plugin_user_password* | admin                                           | The password of a Dynatrace AppMon user that has the *Manage Plugin Bundles* permission. |
 | *dynatrace_plugin_role_name*     | Dynatrace.Dynatrace-Plugin                      | The actual name of this role in an [Ansible Playbook's](http://docs.ansible.com/playbooks.html) ```roles``` directory. |
 
 ## Example Playbook
@@ -61,7 +61,7 @@ By default, we run our tests inside [Docker](https://www.docker.com/) containers
 
 ### Presentations
 
-- [Automated Deployments (of Dynatrace) with Ansible](http://www.slideshare.net/MartinEtmajer/automated-deployments-with-ansible)
+- [Automated Deployments (of Dynatrace AppMon) with Ansible](http://www.slideshare.net/MartinEtmajer/automated-deployments-with-ansible)
 - [Test-Driven Infrastructure with Ansible, Test Kitchen, Serverspec and RSpec](http://www.slideshare.net/MartinEtmajer/testing-ansible-roles-with-test-kitchen-serverspec-and-rspec-48185017)
 
 ## Problems? Questions? Suggestions?
